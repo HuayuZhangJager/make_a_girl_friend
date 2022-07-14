@@ -1,8 +1,9 @@
-BUILD = ./build
+BUILD = ./build/
+INSTALL_DIR = /usr/local/bin/
 
 agf: clean
 	$(shell mkdir $(BUILD))
-	gcc girlfriend.c -o $(BUILD)/girlfriend
+	gcc girlfriend.c -o $(BUILD)girlfriend
 
 .PHNONY: run
 run: agf
@@ -10,8 +11,9 @@ run: agf
 
 .PHNONY: install
 install: agf
-	sudo install -v $(BUILD)/girlfriend /usr/local/bin/
+	sudo install -v $(BUILD)girlfriend $(INSTALL_DIR)
 
 .PHNONY: clean
 clean:
 	-rm -rf $(BUILD)
+	-sudo rm -rf $(INSTALL_DIR)/girlfriend
