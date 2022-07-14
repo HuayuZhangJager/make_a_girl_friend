@@ -16,4 +16,7 @@ install: agf
 .PHNONY: clean
 clean:
 	-rm -rf $(BUILD)
+
+.PHNONY: uninstall
+uninstall:
 	-sudo rm -rf $(INSTALL_DIR)/girlfriend
